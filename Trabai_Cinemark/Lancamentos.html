@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <title>Lançamentos - Cine D.Mark</title>
+</head>
+<body>
+    
+    <!-- SEU HEADER INTEGRADO -->
+    <header>
+        <div class="header-Cine">
+            <img src="/img/logo.png" alt="Logo" class="Logo">
+            <span class="site">Cine D.Mark</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Principal</a>
+            <a href="Contato.html">Contato</a>
+            <a href="Sobre.html">Sobre</a>
+            <a href="Cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+
+
+    <div class="cinema-banner-hero">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                
+                <span class="movie-label">Em Breve</span>
+                <h1 class="movie-main-title">Vingadores Doomsday</h1>
+                <p class="movie-synopsis">“Universos colidem e a Saga do Multiverso começa seu capítulo final em Vingadores: Doutor Destino, da Marvel. Amados heróis de três universos distintos entram em uma trajetória de colisão mortal e enfrentam uma ameaça existencial diferente de qualquer outra que já encontraram. Este filme épico construirá a base para o futuro do Universo Cinematográfico da Marvel.”</p>
+                
+
+                <div class="cinema-countdown" id="deMarcosCountdown" data-date="2026-12-25T00:00:00">
+                    <div class="time-block">
+                        <span class="time-number" id="days">00</span>
+                        <span class="time-label">Dias</span>
+                    </div>
+                    
+                    <div class="time-separator">:</div>
+                    
+                    <div class="time-block">
+                        <span class="time-number" id="hours">00</span>
+                        <span class="time-label">Horas</span>
+                    </div>
+                    
+                    <div class="time-separator">:</div>
+                    
+                    <div class="time-block">
+                        <span class="time-number" id="minutes">00</span>
+                        <span class="time-label">Minutos</span>
+                    </div>
+                    
+                    <div class="time-separator">:</div>
+                    
+                    <div class="time-block">
+                        <span class="time-number" id="seconds">00</span>
+                        <span class="time-label">Segundos</span>
+                    </div>
+                </div>
+                
+                <div class="banner-actions">
+                    <button class="btn-primary">Cadastre-se</button>
+                    <button class="btn-secondary">Assistir Trailer</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+    <footer>
+        <div class="footer"></div>
+    </footer>
+
+   
+    <script>
+        function initCountdown() {
+            const container = document.getElementById('deMarcosCountdown');
+            if (!container) return;
+
+            const targetDate = new Date(container.getAttribute('data-date')).getTime();
+
+            const dBlock = document.getElementById('days');
+            const hBlock = document.getElementById('hours');
+            const mBlock = document.getElementById('minutes');
+            const sBlock = document.getElementById('seconds');
+
+            function update() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference < 0) {
+                    container.innerHTML = "<span class='time-number' style='font-family: inherit; font-size: 24px; color: #2779F5;'>JÁ ESTÁ EM EXIBIÇÃO!</span>";
+                    return;
+                }
+
+                const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+                dBlock.textContent = String(d).padStart(2, '0');
+                hBlock.textContent = String(h).padStart(2, '0');
+                mBlock.textContent = String(m).padStart(2, '0');
+                sBlock.textContent = String(s).padStart(2, '0');
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        window.addEventListener('DOMContentLoaded', initCountdown);
+    </script>
+</body>
+</html>

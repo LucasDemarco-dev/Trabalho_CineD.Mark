@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!--<link rel="stylesheet" href="/css/bootstrap.css">--> 
+    <link href="https://googleapis.com" rel="stylesheet">
+    <title>Cine D.Mark</title>
+</head>
+<body>
+    <header>
+        <div class="header-Cine">
+            <img src="/img/Logo.png" alt="Logo" class="Logo">
+            <span class="site">Cine D.Mark</span>
+        </div>
+        
+        <nav class="nav">
+           <a href="Lancamentos.html">Lançamentos</a>
+           <a href="Contato.html">Contato</a>
+           <a href="Cadastro.html">Cadastro</a>
+           <a href="Sobre.html">Sobre</a>
+        </nav>
+      
+    </header>
+
+    <div class="container">
+
+        <div class="carousel-wrapper">
+            <h2 class="carousel-title">Filmes Mais Vistos</h2>
+            
+            <div class="carousel-container">
+
+                <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
+                
+
+                <div class="carousel-row" id="carouselRow">
+
+                    <div class="movie-card">
+                        <img src="/img/forrest-gump.jpg" alt="Filme 1">
+                        <div class="movie-info">
+                            <p class="movie-title">Forrest Gump</p>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <img src="/img/O-Poderoso-Chefao.webp" alt="Filme 2">
+                        <div class="movie-info">
+                            <p class="movie-title">O Poderoso Chefão</p>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <img src="/img/Um-sonho-de-liberdade.jpg" alt="Filme 3">
+                        <div class="movie-info">
+                            <p class="movie-title">Um Sonho De Liberdade</p>
+                        </div>
+                    </div>
+  
+                    <div class="movie-card">
+                        <img src="/img/Batman.avif" alt="Filme 4">
+                        <div class="movie-info">
+                            <p class="movie-title">Batmam: O Cavaleiro Das Trevas</p>
+                        </div>
+                    </div>
+  
+                    <div class="movie-card">
+                        <img src="/img/clube-da-luta.jpg" alt="Filme 5">
+                        <div class="movie-info">
+                            <p class="movie-title">Clube Da Luta</p>
+                        </div>
+                    </div>
+  
+                    <div class="movie-card">
+                        <img src="/img/Resgate.jpg" alt="Filme 6">
+                        <div class="movie-info">
+                            <p class="movie-title">Resgate Do Soldado Ryan</p>
+                        </div>
+                    </div>
+                </div>
+
+          
+                <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+            </div>
+        </div>
+        
+        <div class="container-cards">
+            <h1>Voltando aos cinemas</h1>
+            <div class="card">
+                <img src="img/vingadores.webp" alt="Vingadores Ultimato Encore">
+                <h3>Vingadores Ultimato </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Os-Incriveis.jpg" alt="Os Incriveis">
+                <h3>Os Incriveis </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Avatar.jpg" alt="Avatar: O Caminho da Água">
+                <h3>Avatar: Caminho da Água </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Coringa.jpg" alt="Coringa">
+                <h3>Coringa </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Oppenheimer.jpg" alt="Oppenheimer">
+                <h3>Oppenheimer</h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="img/Devorador-de-estrelas.webp" alt="Devorador De Estrelas">
+                <h3>Devorador De Estrelas </h3>
+                <button>Assistir</button>
+            </div>
+        </div>
+        <div class="container-cards">
+            <h1>Animações</h1>
+            <div class="card">
+                <img src="/img/Rei.jfif" alt="Rei Leão">
+                <h3>Rei Leão </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Gato.webp" alt="Gato de botas">
+                <h3>Gato de botas </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Gravity.webp" alt="Gravity Falls">
+                <h3>Gravity Falls </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Monstros.webp" alt="Monstros S.A.">
+                <h3>Monstros S.A. </h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/Procurado.webp" alt="Procurando Nemo">
+                <h3>Procurando Nemo</h3>
+                <button>Assistir</button>
+            </div>
+            <div class="card">
+                <img src="/img/zootopia.jfif" alt="Zootopia">
+                <h3>Zootopia </h3>
+                <button>Assistir</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer">
+            
+        </div>
+    </footer>
+
+    
+    <script>
+        const row = document.getElementById('carouselRow');
+        const prev = document.getElementById('prevBtn');
+        const next = document.getElementById('nextBtn');
+
+      
+        next.addEventListener('click', () => {
+            const cardWidth = document.querySelector('.movie-card').offsetWidth;
+            row.scrollBy({ left: cardWidth * 3, behavior: 'smooth' });
+        });
+
+        prev.addEventListener('click', () => {
+            const cardWidth = document.querySelector('.movie-card').offsetWidth;
+            row.scrollBy({ left: -cardWidth * 3, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
