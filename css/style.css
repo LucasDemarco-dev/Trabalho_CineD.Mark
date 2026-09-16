@@ -236,7 +236,7 @@ Contador
 .cinema-banner-hero {
     width: 100%;
     min-height: 600px; 
-    background-image: url('img/Vingadores_dooms_day.webp'); 
+    background-image: url('../img/Vingadores_dooms_day.webp');
     background-size: cover;
     background-position: center top;
     position: relative;
